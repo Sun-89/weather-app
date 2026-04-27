@@ -77,6 +77,15 @@ export default function Home() {
           </div>
         </div>
       )}
+      <footer style={{ marginTop: "30px" }}>
+        <a 
+        href="https://sun-89.github.io/PortfolioPro/" 
+        target="_blank" 
+        style={{ color: "#fff", textDecoration: "underline", fontSize: "14px" }}
+        >
+        Voir mon portfolio
+        </a>
+</footer>
     </div>
   );
 }
