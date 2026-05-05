@@ -5,6 +5,7 @@ export default function Home() {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState<any>(null);
   const [error, setError] = useState(false);
+  const [localTime, setLocalTime] = useState<string>("");
 
   async function checkWeather() {
     console.log("CLICK OK");
@@ -21,6 +22,17 @@ export default function Home() {
     const data = await response.json();
     setWeather(data);
     console.log("DATA:", data);
+
+    
+    if (data.timezone) {
+      const now = new Date((data.dt + data.timezone) * 1000);
+      const timeString = now.toLocaleTimeString("fr-FR", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      });
+      setLocalTime(timeString);
+    }
 
     setError(false);
   }
@@ -66,6 +78,7 @@ export default function Home() {
 
           <h1 className="temp">{Math.round(weather.main.temp)}°C</h1>
           <h2 className="city">{weather.name}</h2>
+          {localTime && <p className="local-time">Heure locale: {localTime}</p>}
 
           <div className="details">
             <div className="col">

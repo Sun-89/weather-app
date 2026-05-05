@@ -68,6 +68,12 @@ body{
     font-weight: 400;
     margin-top:-10px
 }
+.local-time{
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 10px;
+    opacity: 0.9;
+}
 .details{
     display: flex;
     align-items: center;
