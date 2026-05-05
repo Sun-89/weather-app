@@ -1,131 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Weather App
+Ask DeepWiki
 
-## Getting Started
+A modern weather application developed with Next.js and the OpenWeather API. It allows users to search for a city and view real-time weather data, including temperature, humidity, and wind speed, presented in a clean and responsive interface.
 
-First, run the development server:
+✨ Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+View the live project here: https://weather-app-olive-one-99.vercel.app
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🚀 Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+City Search: Find weather information for any city.
+Real-time Weather Data: Displays current temperature, humidity, and wind speed.
+Dynamic Icons: Weather icons change automatically based on the current conditions.
+Error Handling: Provides a clear message if a city cannot be found.
+Secure API Requests: Protects the OpenWeather API key by routing requests through a Next.js API route.
+Responsive Design: Adapts to various screen sizes for a seamless experience.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-
-        🌦️ Weather App – Next.js
-Application météo moderne développée avec Next.js 16, React, et l’API OpenWeather.
-Elle permet de rechercher une ville et d’afficher en temps réel :
-
-la température
-
-l’humidité
-
-la vitesse du vent
-
-une icône météo dynamique
-
-un message d’erreur si la ville n’existe pas
-
-🚀 Démo en ligne
-👉 Lien du projet : (https://weather-app-olive-one-99.vercel.app)  
-👉 Portfolio : (https://sun-89.github.io/PortfolioPro/)
-
-        🛠️ Technologies utilisées
+🛠️ Technologies Used
 
 Next.js 16 (App Router)
-
-React
-
+React 19
 TypeScript
-
-API Routes Next.js (pour cacher la clé API)
-
-CSS
-
 OpenWeather API
+Custom CSS
 
-        📦 Installation
-Cloner le projet :
+🏁 Getting Started
 
-bash
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+
+Prerequisites
+
+Node.js (v20 or later)
+An API key from OpenWeather. The free "Current Weather Data" plan is sufficient.
+Installation & Setup
+Clone the repository:
+
 git clone https://github.com/Sun-89/weather-app.git
+Navigate to the project directory:
+
 cd weather-app
-Installe les dépendances :
+Install the dependencies:
 
-bash
 npm install
-Crée un fichier .env.local :
+Set up environment variables: Create a file named .env.local in the root of the project and add your OpenWeather API key:
 
-Lancer le serveur :
+API_KEY=your_openweathermap_api_key
+Start the development server:
 
-bash
 npm run dev
-L’application sera disponible sur :
+Open http://localhost:3000 in your browser to see the application.
 
+🔐 API Key Security
 
-http://localhost:3000
-        🔐 Sécurité
-La clé API est protégée grâce à une API Route Next.js :
+To protect the OpenWeather API key, it is never exposed on the client side. All API calls are proxied through a Next.js API route located at pages/api/weather.js. The server-side route fetches the data from the OpenWeather API and then sends it to the client, ensuring the key remains private.
 
-const apiKey = process.env.API_KEY;
-Elle n’est jamais exposée côté client.
+📁 Project Structure
 
-        📁 Structure du projet
-Code
+Here is a brief overview of the key files and directories:
+
 weather-app/
- ├── app/
- │    ├── page.tsx
- │    └── layout.tsx
- ├── pages/
- │    └── api/
- │         └── weather.js
- ├── public/
- │    └── images/
- ├── styles/
- │    └── index.css
- └── .env.local
+├── app/
+│   ├── page.tsx        # Main page component (UI)
+│   └── layout.tsx      # Root layout for the application
+├── pages/
+│   └── api/
+│       └── weather.js  # API route to securely fetch weather data
+├── public/
+│   └── images/         # Static assets (weather icons, search icon)
+├── styles/
+│   └── index.css       # Main stylesheet for the application
+└── .env.local          # Environment variables (API key)
 
 
-        ✨ Fonctionnalités
-
-Recherche de ville
-
-Affichage dynamique de la météo
-
-Icônes météo automatiques
-
-Gestion des erreurs (ville introuvable)
-
-Design responsive
-
-API sécurisée
-
-
-👨‍💻 Auteur
-Kevin  
-Développeur junior 
-👉 (https://sun-89.github.io/PortfolioPro/)
+👨‍💻 Author
+Kevin - Junior Developer
+Portfolio: https://sun-89.github.io/PortfolioPro/
